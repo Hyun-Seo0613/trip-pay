@@ -1,3 +1,4 @@
+// 금액 요약 표시(UI전용) 계산은 부모가 넘겨준 props 사용해서 함.
 import { krw } from "../../utils/format";
 //결제금액
 export default function OrderSummary({ itemsAmount, optionsAmount }) {
@@ -12,6 +13,7 @@ export default function OrderSummary({ itemsAmount, optionsAmount }) {
   );
 }
 
+//라벨/ 값 한줄 표시
 function Row({ label, value }) {
   return (
     <div style={{ display: "flex", justifyContent: "space-between", fontSize: 14, padding: "4px 0" }}>

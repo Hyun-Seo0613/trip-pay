@@ -1,3 +1,4 @@
+// 옵션 선택 컴포넌트 / 옵션상태는 부모에서 관리하고 여기서는 UI + 클릭이벤트만 처리하도록
 import { krw } from "../../utils/format";
 import { OPTION_PRICES } from "../../data/products";
 
@@ -11,6 +12,7 @@ export default function OptionSelect({ opts, toggle }) {
   );
 }
 
+//옵션 하나를 화면에 그려주는  UI 컴포넌트
 function OptionRow({ label, price, checked, onClick }) {
   return (
     <div onClick={onClick} style={row}>
@@ -23,4 +25,5 @@ function OptionRow({ label, price, checked, onClick }) {
   );
 }
 
+// 클릭 가능한 옵션 Row 스타일 
 const row = { display: "flex", justifyContent: "space-between", alignItems: "center", padding: "8px 0", cursor: "pointer" };
