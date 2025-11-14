@@ -1,5 +1,5 @@
 import { krw } from "../../utils/format";
-import { OPTION_PRICES } from "../../data/products";
+import { OPTION_PRICES } from "../../data/travelData";
 
 export default function OptionSelect({ opts, toggle }) {
   return (
