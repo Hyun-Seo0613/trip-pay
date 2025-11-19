@@ -1,6 +1,6 @@
 // 옵션 선택 컴포넌트 / 옵션상태는 부모에서 관리하고 여기서는 UI + 클릭이벤트만 처리하도록
 import { krw } from "../../utils/format";
-import { OPTION_PRICES } from "../../data/products";
+import { OPTION_PRICES } from "../../data/travelData";
 
 export default function OptionSelect({ opts, toggle }) {
   return (
