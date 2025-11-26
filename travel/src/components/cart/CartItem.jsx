@@ -1,16 +1,24 @@
+// 개별 장바구니 아이템 표시 + 수량/삭제 액션
 import { krw } from "../../utils/format";
 
 export default function CartItem({ item, onInc, onDec, onRemove }) {
   return (
     <div style={row}>
+      {/* 상품 정보 */}
       <div>
         <div style={{ fontWeight: 500 }}>{item.title}</div>
         <div style={{ fontSize: 14, color: "#6b7280" }}>{krw(item.price)} / 1인</div>
       </div>
+
+      {/* 수량 조절 + 삭제 */}
       <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+        {/* 수량 감소(최소 1 유지는 부모 로직) */}
         <button onClick={() => onDec(item.id)} style={btn}>-</button>
+        {/* 현재 수량 */}
         <span style={{ width: 24, textAlign: "center" }}>{item.qty}</span>
+        {/* 수량 증가 */}
         <button onClick={() => onInc(item.id)} style={btn}>+</button>
+        {/* 항목 제거 */}
         <button onClick={() => onRemove(item.id)} style={{ ...btnText, color: "#dc2626" }}>삭제</button>
       </div>
     </div>
