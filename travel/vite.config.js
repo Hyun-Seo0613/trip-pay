@@ -1,18 +1,19 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
   test: {
-    environment: 'jsdom',
+    environment: "jsdom",
     globals: true,
-    setupFiles: './src/setupTests.js',
+    setupFiles: "./src/setupTests.js",
 
-    pool: 'threads',
-    maxThreads: 1,
-    minThreads: 1,
+    poolOptions: {
+      forks: {
+        execArgv: ["--max-old-space-size=4096"], // 메모리 부족 방지
+      },
+    },
     testTimeout: 10000,
   },
 });
-
